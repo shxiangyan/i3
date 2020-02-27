@@ -40,7 +40,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 #exec_always --no-startup-id ~/.config/polybar/polybar_1.sh &
 exec_always albert
-exec_always fcitx
+# exec_always fcitx
 exec_always feh --bg-scale /home/yan/Pictures/white-and-yellow-flower-with-green-stems-36764.jpg
 
 exec xfce4-volume
@@ -62,6 +62,15 @@ bindsym $mod+shift+n exec nautilus
 bindsym $mod+shift+x exec conky
 
 bindsym $mod+shift+b exec emacs /home/yan/.config/i3/config
+
+#bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+#bindsym Print exec scrot -e 'mv $f $pictures_folder/Scrot/$f'
+#-e 'mv $f $~/Pictures/Scrot/$f'
+bindsym $mod+x exec scrot -u -e 'mv $f $~/Pictures/Scrot/$f'
+
+bindsym $mod+shift+z exec scrot -e 'mv $f $~/Pictures/Scrot/$f'
+
+bindsym --release $mod+z exec scrot -s -e 'mv $f $~/Pictures/Scrot/$f'
 
 #bindsym XF86AudioRaiseVolume exec amixer set Master playback 5+
 #bindsym XF86AudioLowerVolume exec amixer set Master playback 5-
@@ -207,7 +216,7 @@ bindsym $mod+r mode "resize"
 #finds out, if available)
 bar {
         #tatus_command i3status
-	status_command i3blocks
+	#status_command i3blocks
 	status_command i3status --config ~/.config/i3status/config2
 
 	
